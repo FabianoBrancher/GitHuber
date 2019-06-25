@@ -8,7 +8,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Header from '~/components/Header';
-
 import RepositoryItem from './RepositoryItem';
 
 import styles from './styles';
@@ -37,7 +36,7 @@ class Repositories extends Component {
   }
 
   loadRepositories = async () => {
-    this.setState({ refreshing: true })
+    this.setState({ refreshing: true });
     const username = await AsyncStorage.getItem('@Githuber:username');
     const { data } = await api.get(`/users/${username}/repos`);
 
