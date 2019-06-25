@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import AsyncStorage from '@react-native-community/async-storage';
+
 import {
   View,
   Text,
@@ -9,11 +13,16 @@ import {
 } from 'react-native';
 
 import api from '~/services/api';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import styles from './ styles';
 
 class Welcome extends Component {
+  static propTypes = {
+    navigation: PropTypes.shape({
+      navigate: PropTypes.func,
+    }).isRequired,
+  };
+
   state = {
     username: '',
     loading: false,
