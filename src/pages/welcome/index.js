@@ -49,7 +49,7 @@ class Welcome extends Component {
       await this.checkUserExists(username);
       await this.saveUser(username);
 
-      navigation.navigate('User');
+      navigation.navigate('User', username);
     } catch (err) {
       this.setState({ loading: false, error: true });
     }
